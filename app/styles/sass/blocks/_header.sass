@@ -1,0 +1,342 @@
+.top
+	margin-bottom: 3rem
+.top-search-wrap
+	display: none
+	position: relative
+	padding-top: 2rem
+	padding-bottom: 2rem
+	background-color: $accent
+
+.top-search-wrap.show
+	display: block
+	animation-duration: .7s
+	animation-fill-mode: both
+	animation-name: fadeIn
+
+.top-search-btn-closed
+	position: absolute
+	top: 1rem
+	right: 1rem
+	width: 30px
+	height: 30px
+	font-size: 30px
+	line-height: 30px
+	color: #fff
+	text-align: center
+	cursor: pointer
+	transition: $trc
+	&:hover
+		color: $yellow
+.top-search-inner
+	display: flex
+	justify-content: center
+	width: $xll
+	margin: 0 auto
+
+
+.top-search-form
+	display: flex
+	width: 60%
+.top-search-input
+	width: calc(100%  - 90px )
+	background: none
+	color: $grey
+	border: none
+	border-radius: 0
+	border-bottom: 1px solid $grey
+	//margin: 0 10px 0 auto
+	margin-right: 10px
+	display: block
+	padding-left: .5rem
+	padding-right: .5rem
+	&::placeholder
+		color: rgba($grey, .3)
+		font-size: 1.05em
+
+.top-search-btn-sub
+	display: inline-block
+	width: 80px
+	height: 100%
+	outline: 0
+	background: none
+	border-radius: 4px
+	border: 2px solid $grey
+	text-align: center
+	vertical-align: middle
+	user-select: none
+	font-size: 1.05rem
+	color: $grey
+	cursor: pointer
+	transition: color .2s ease-out 0s, border-color .2s ease-out 0s
+	&:hover
+		color: $yellow
+		border-color: $yellow
+.navbar_wrap
+	height: 90px
+	padding-top: 10px
+	padding-bottom: 10px
+	background-color: #fff
+.navbar
+	max-width: 1000px
+	display: flex
+	align-items: center
+	margin: 0 auto
+
+.logo_wrap
+	width: 70px
+	height: 70px
+	margin-right: 1rem
+	svg
+		width: 100%
+		height: 100%
+.logo_link
+	display: block
+	height: 100%
+	svg
+		.fa-primary
+			fill: $accent
+			transition: fill .2s ease-out 0s
+		.fa-secondary
+			opacity: .7
+			fill: $yellow
+			transition: opacity .2s ease-out 0s
+	&:hover,
+	&:focus
+		svg
+			.fa-primary
+				fill: $accentDark
+			.fa-secondary
+				opacity: 1
+
+
+
+.menu
+	font-size: .85rem
+	letter-spacing: .1em
+	text-transform: uppercase
+	font-weight: bold
+	height: 70px
+.menu_list
+	display: flex
+	height: 100%
+	list-style: none
+	margin-bottom: 0
+	padding-left: 0
+.menu_item
+	height: 100%
+	padding-bottom: 10px
+	position: relative
+
+	&:hover > ul.submenu_list
+		transform: translate3d(0, 0, 0)
+		opacity: 1
+		visibility: visible
+
+.menu_link
+	position: relative
+	display: block
+	padding: 24px
+	//line-height: 70px
+	box-sizing: border-box
+	overflow: hidden
+	color: $txt
+	text-decoration: none
+	border-bottom: 3px solid transparent
+	transition: border-color .2s ease-out 0s, color .2s ease-out 0s
+	&:hover,
+	&:focus
+		color: $txt
+		border-color: red
+		color: $accentDark
+.active
+	.menu_link
+		border-color: red
+.menu_link.many
+	&::after
+		content: '▼'
+		display: inline-block
+		height: 7px
+		width: 7px
+		position: absolute
+		top: 50%
+		margin-top: -3px
+		font-size: .6rem
+		line-height: 7px
+		margin-left: 5px
+		opacity: .7
+
+.submenu_list
+	display: block
+	position: absolute
+	width: 220px
+	top: calc( 100% + 10px  )
+	box-shadow: 0 10px 20px rgba(38, 50, 56, .1)
+	z-index: 10
+	background: #fff
+	font-weight: 500
+	list-style: none
+	padding-left: 0
+	overflow: hidden
+	transform: translate3d(0, 5px, 0)
+	opacity: 0
+	visibility: hidden
+	transition: all .3s
+
+
+
+
+
+.submenu_item
+	width: 100%
+.submenu_link
+	display: block
+	border-bottom: 1px solid rgba(38, 50, 56, 0.1)
+	padding: 0.75rem
+	color: $txt
+	text-decoration: none
+	transition: color .2s ease-out 0s
+	&:hover,
+	&:focus
+		color: $accentDark
+
+
+.nav_btn
+	display: none
+	justify-content: center
+	align-items: center
+	width: 70px
+	height: 70px
+	margin-left: auto 0
+	transition: fill .2s ease-out 0s
+	svg
+		width: 30px
+		height: 30px
+		fill: $textcolor
+		cursor: pointer
+		transition: fill .2s ease-out 0s
+	&:hover,
+	&:focus
+		svg
+			fill: $accentDark
+
+
+.nav_btn_search
+	display: flex
+	justify-content: center
+	align-items: center
+	width: 70px
+	height: 70px
+	//background-color: $accent
+	margin: auto
+	margin-right: 0
+	transition: fill .2s ease-out 0s
+	svg
+		width: 25px
+		height: 25px
+		fill: $textcolor
+		cursor: pointer
+		transition: fill .2s ease-out 0s
+
+
+@include media-breakpoint-down(xl)
+	.top-search-inner
+		width: 100%
+	.navbar
+		padding-left: 2rem
+		padding-right: 2rem
+
+
+@include media-breakpoint-down(md)
+	.top-search-inner
+		width: 100%
+		padding-left: 4rem
+		padding-right: 4rem
+	.top-search-form
+		width: 100%
+
+
+@include media-breakpoint-down(sm)
+	.top-search-input
+		width: calc(100%  - 50px )
+	.top-search-btn-sub
+		width: 50px
+		border: none
+		font-size: 0
+		background: url(/images/src/svg/search.svg) no-repeat transparent 50%
+		background-size: 1.5rem
+		overflow: hidden
+	.navbar_wrap
+		position: relative
+	.menu
+		display: none
+		position: absolute
+		top: 100%
+		left: 0
+		right: 0
+		width: 100%
+		background-color: #fff
+		opacity: 0
+		transition: opacity .2s ease-out 0s
+		animation-name: fadeOut
+		animation-duration: .5s
+		animation-timing-function: ease-out
+		animation-fill-mode: forwards
+
+	.menu_list
+		display: block
+	.menu_item
+		background-color: #fff
+		padding-bottom: 0
+		height: auto
+		&:first-child
+			.menu_link
+				border-top: 1px solid rgba(38, 50, 56, 0.1)
+	.menu.active
+		display: block
+		z-index: 100
+		animation-name: fadeIn
+		animation-duration: .5s
+		animation-timing-function: ease-out
+		animation-fill-mode: forwards
+
+
+	.menu_link
+		padding: 10px 24px
+		border-bottom: 1px solid rgba(38, 50, 56, 0.1)
+
+	.submenu_list
+		display: block
+		position: inherit
+		width: 100%
+		top: calc( 100% + 10px  )
+		box-shadow: none
+		z-index: 10
+		background: #fff
+		font-weight: 500
+		list-style: none
+		padding-left: 0
+		transform: translate3d(0, 0, 0)
+		opacity: 1
+		visibility: visible
+		transition: all .3s
+
+	.submenu_link
+		padding: 10px 24px 10px 40px
+
+
+	.active
+		.menu_link
+			border-bottom: 1px solid rgba(38, 50, 56, 0.1)
+	.menu_link.many
+		&::after
+			display: none
+
+
+	.nav_btn
+		display: flex
+
+
+@media only screen and (max-width : 450px)
+	.top-search-inner
+		padding-left: 2rem
+		padding-right: 2.5rem
