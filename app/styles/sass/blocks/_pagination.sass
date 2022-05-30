@@ -1,0 +1,72 @@
+.pagination_wrap
+	display: flex
+	justify-content: center
+	align-items: center
+	margin-bottom: 2rem
+.pagination_list
+	display: flex
+	justify-content: center
+	align-items: center
+	flex-wrap: wrap
+	list-style: none
+	padding: 0
+	margin: 0
+	font-size: 1.05rem
+.pagination_direct
+	display: inline-block
+	margin: 0 2px 3px 2px
+	border-radius: 2px
+
+.pagination_direct.dormant
+	.pagination_direct_link
+		color: lighten($textcolor, 50%)
+
+
+.pagination_direct_link
+	position: relative
+	display: block
+	text-align: center
+	color: $textcolor
+	text-decoration: none
+	background-color: #fff
+	box-sizing: border-box
+	padding: .375rem 1.025rem
+	transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out
+	&:hover,
+	&:focus
+		background-color: $accent
+		color: #fff
+.pagination_direct_link.prev
+	border-radius: 4px 0 0 4px
+.pagination_direct_link.next
+	border-radius: 0 4px 4px 0
+.pagination_item
+	display: inline-block
+	margin: 0 2px 3px 2px
+	border-radius: 2px
+.page-item.dormant
+	display: inline-block
+	padding: .375rem .75rem
+
+.pagination_link
+	position: relative
+	display: block
+	color: $textcolor
+	text-decoration: none
+	background-color: #fff
+	box-sizing: border-box
+	padding: .375rem 1rem
+	transition: color .15s ease-in-out, background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out
+	&:hover,
+	&:focus
+		background-color: $accent
+		color: #fff
+
+.pagination_item.active
+	.pagination_link
+		background-color: $accent
+		color: #fff
+
+.pagination_link.active
+	background-color: $accent
+	color: #fff

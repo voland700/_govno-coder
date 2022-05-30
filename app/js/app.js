@@ -102,6 +102,41 @@ document.addEventListener('DOMContentLoaded', () => {
 			}
 	}
 
+	/*--same-hight-bloks-main-page--*/
+	/*
+	if(document.querySelector('.main_item_body'))	{
+		funcItemsHeight()
+		function funcItemsHeight() {
+			var menuItems = document.querySelectorAll('.main_item_body');
+			var top = menuItems[0].offsetTop;
+			var arrHeight = [];
+			var arrItems = [];
+			for (var i = 0; i < menuItems.length; i++) {
+				menuItems[i].style.height = 'auto';
+			}
+			for (var i = 0; i < menuItems.length; i++) {
+				if (top != menuItems[i].offsetTop) {
+					arrHeight.sort(function (a, b) { return b - a });
+					for (var j = 0; j < arrItems.length; j++) {
+
+						arrItems[j].style.height = arrHeight[0] + 'px';
+					}
+					top = menuItems[i].offsetTop;
+					arrHeight.length = arrItems.length = 0;
+					i = i - 1;
+					continue;
+				}
+				arrHeight[arrHeight.length] = menuItems[i].offsetHeight;
+				arrItems[arrItems.length] = menuItems[i];
+			}
+			arrHeight.sort(function (a, b) { return b - a });
+			for (var j = 0; j < arrItems.length; j++) {
+				arrItems[j].style.height = arrHeight[0] + 'px';
+			}
+		}
+		window.onresize = funcItemsHeight
+	}
+	*/
 
 
 
