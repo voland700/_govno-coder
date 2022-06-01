@@ -1,0 +1,164 @@
+footer
+	background-color: #fff
+	min-height: 240px
+
+.footer_wrap
+	display: flex
+	flex-wrap: wrap
+	margin: 0 1.5rem
+	padding-top: 3rem
+	padding-bottom: 4rem
+	border-bottom: 1px solid $border
+.footer_item
+	width: calc( 100%/4 - 3rem )
+	margin-left: 1.5rem
+	margin-right: 1.5rem
+.footer_serch_form
+	display: flex
+	width: 100%
+	position: relative
+	box-sizing: border-box
+	border: 1px solid $border
+	border-radius: 3px
+	overflow: hidden
+
+.footer_serch_inp
+	flex-basis: calc( 100% - 40px )
+	border: none
+	height: 40px
+	font-size: 1rem
+	color: lighten($textcolor, .9)
+	padding-left: .75rem
+	overflow: hidden
+	box-shadow: 0px 2px 4px 0px rgba(38, 50, 56, 0.05)
+.footer_serch_btn
+	display: block
+	width: 40px
+	height: 40px
+	font-size: 0
+	border: none
+	border-left: 1px solid $border
+	background: url(/images/src/svg/search.svg) no-repeat transparent 10%
+	background-position: center center
+	background-size: 1.3rem
+	transition: background-color .2s ease-out 0s
+	&:hover,
+	&:focus
+		//background-color:  rgba(38, 50, 56, 0.15)
+		background-color:  $accent
+
+
+.footer_title
+	min-height: 40px
+	margin: 0 0 1rem
+	font-size: .9rem
+	text-transform: uppercase
+	letter-spacing: .5px
+	padding: .5rem 0
+	border-bottom: 1px solid $border
+	color: lighten($colorTitle, 10%)
+.footer_txt
+	font-size: .9rem
+	color: lighten($colorTitle, 40%)
+	margin-bottom: 0
+.footer_icons
+	list-style: none
+	margin-bottom: 0
+	padding-left: 0
+.footer_icon
+	display: inline-block
+	width: 32px
+	height: 32px
+	margin: 0 2px 2px 0
+	overflow: hidden
+	border-radius: 4px
+	box-shadow: 0px 2px 4px 0px rgba(38, 50, 56, 0.1)
+.footer_icon > span
+	display: block
+	width: 32px
+	height: 32px
+	background-image: url('/images/src/css_sprites.png')
+	background-repeat: no-repeat
+	cursor: pointer
+	transition: filter .2s ease-out 0s
+	&:hover
+		filter: grayscale(50%)
+.bg-fb
+	background-position: -10px -10px
+.bg-inst
+	background-position: -62px -10px
+.bg-rutube
+	background-position: -10px -62px
+.bg-telegram
+	background-position: -62px -62px
+.bg-twitter
+	background-position: -114px -10px
+.bg-vk
+	background-position: -114px -62px
+.bg-youtube
+	background-position: -10px -114px
+
+.footer_mail
+	font-size: .9rem
+	color: lighten($colorTitle, 40%)
+.footer_mail_link
+	text-decoration: none
+	//color: lighten($colorTitle, 40%)
+	color: $link
+.footer_logo
+	width: calc( 100%/4 - 3rem )
+	margin-left: 1.5rem
+	margin-right: 1.5rem
+	display: flex
+	justify-content: center
+.footer_logo_img
+	width: 80px
+	height: auto
+	svg
+		.fa-primary
+			fill: $accent
+		.fa-secondary
+			opacity: .7
+			fill: $yellow
+
+.footer_bottom
+	padding: 1rem 0
+	text-align: center
+.footer_cop
+	font-size: .8rem
+	font-style: italic
+	color: lighten($colorTitle, 40%)
+
+@include media-breakpoint-down(xxl)
+	.footer_wrap
+		margin-left: -1.5rem
+		margin-right: -1.5rem
+
+	.footer_item
+		width: calc( 28% - 3rem )
+	.footer_logo
+		width: calc( 16% - 3rem )
+
+@include media-breakpoint-down(xl)
+	.footer_item
+		width: calc( 100% / 3 - 3rem )
+	.footer_logo
+		display: none
+
+@include media-breakpoint-down(md)
+	.footer_wrap
+		justify-content: space-between
+		margin-left: 0
+		margin-right: 0
+	.footer_item
+		width: calc( 100% / 2 - 3rem )
+		margin-bottom: 2rem
+
+
+@include media-breakpoint-down(sm)
+	.footer_item
+		width:100%
+		margin-bottom: 2rem
+
+
+@media only screen and (max-width : 450px)

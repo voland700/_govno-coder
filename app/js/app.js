@@ -102,6 +102,16 @@ document.addEventListener('DOMContentLoaded', () => {
 			}
 	}
 
+	/*-- Social midea icon click --*/
+	if(document.getElementById('socialMediaList')){
+		document.getElementById('socialMediaList').addEventListener('click', toSocialMaeedia)
+		function toSocialMaeedia(event){
+			window.open('https://' + event.target.dataset.to, '_blank');
+		}
+	}
+
+
+
 	/*--same-hight-bloks-main-page--*/
 	/*
 	if(document.querySelector('.main_item_body'))	{
