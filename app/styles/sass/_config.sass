@@ -11,11 +11,12 @@ $txt: #4c5863
 $textcolor: #263238 // Text Color
 $colorTitle: #0f161a
 $border: rgba(38, 50, 56, 0.1)
+$bgColor: #f8f9fa
 
 
 $fontsize: 20px // Body Font Size
 $lineheight: 1.65 // Document Line Height
-$userfont: roboto-oh5, sans-serif // User Font Family
+$userfont: PT Serif, sans-serif // User Font Family
 $systemfont: -apple-system, BlinkMacSystemFont, Arial, sans-serif // System Font Family
 
 // Bootstrap compatible gutter variable => $gutter
@@ -49,14 +50,11 @@ $trc: color .2s ease-out 0s
 		font-weight: $fweight
 		src: url($furl) format('woff2')
 
-@include font('roboto-oh5', normal, 300, '../fonts/RobotoCondensed-Light.woff2')
-@include font('roboto-oh5', italic, 300, '../fonts/RobotoCondensed-LightItalic.woff2')
-@include font('roboto-oh5', normal, 400, '../fonts/RobotoCondensed-Regular.woff2')
-@include font('roboto-oh5', italic, 400, '../fonts/RobotoCondensed-Italic.woff2')
-@include font('roboto-oh5', normal, 500, '../fonts/Roboto-Medium.woff2')
-@include font('roboto-oh5', italic, 500, '../fonts/Roboto-MediumItalic.woff2')
-@include font('roboto-oh5', normal, 700, '../fonts/RobotoCondensed-Bold.woff2')
-@include font('roboto-oh5', italic, 700, '../fonts/RobotoCondensed-BoldItalic.woff2')
+@include font('PT Serif', normal, 400, '../fonts/PTSerif-Regular.woff2')
+@include font('PT Serif', italic, 400, '../fonts/PTSerif-Italic.woff2')
+@include font('PT Serif', normal, 700, '../fonts/PTSerif-Bold.woff2')
+@include font('PT Serif', italic, 700, '../fonts/PTSerif-BoldItalic.woff2')
+
 
 // GENERAL CSS SETTINGS
 
@@ -198,8 +196,41 @@ h1, h2, h3, h4, h5, h6
 		img
 			transform: scale(1.05)
 
+.embed-responsive
+	position: relative
+	display: block
+	width: 100%
+	height: 100%
+	padding: 0
+	overflow: hidden
+	&::before
+		display: block
+		content: ""
+	.embed-responsive-item,
+	iframe,
+	embed,
+	object,
+	video
+		position: absolute
+		top: 0
+		bottom: 0
+		left: 0
+		width: 100%
+		height: 100%
+		border: 0
+.embed-responsive-21by9
+	&::before
+		padding-top: percentage(9 / 21)
+.embed-responsive-16by9
+	&::before
+		padding-top: percentage(9 / 16)
+.embed-responsive-4by3
+	&::before
+		padding-top: percentage(3 / 4)
 
-
+.embed-responsive-1by1
+	&::before
+		padding-top: percentage(1 / 1)
 
 .container
 	max-width: 1320px
@@ -208,6 +239,11 @@ h1, h2, h3, h4, h5, h6
 	padding-left: 30px
 	margin-right: auto
 	margin-left: auto
+
+.mb_05
+	margin-bottom: 0.5rem
+.mb_1
+	margin-bottom: 1rem
 
 @include media-breakpoint-down(xxl)
 	.container

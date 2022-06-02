@@ -1,0 +1,52 @@
+.tags_title
+	display: none
+.tags_cloud
+	display: flex
+	flex-wrap: wrap
+	justify-content: center
+	align-items: center
+	margin-left: 120px
+	margin-right: 120px
+	margin-bottom: 4rem
+	padding: 1rem 0 3rem
+	list-style: none
+.tag_item
+	margin: 0 .5rem 1rem 0
+
+.tag
+	display: inline-block
+	text-decoration: none
+	padding: .25em 1em .3em
+	color:#fff
+	line-height: 1em
+	text-transform: lowercase
+	background-color: $dark
+	border-radius: 99px
+	box-shadow: 0 4px 6px 0 rgba(38, 50, 56, 30%)
+	transition: background-color .2s ease-out 0s, color .2s ease-out 0s
+	&:hover
+		color: #fff
+		text-decoration: none
+		box-shadow: 0 -2px -4px 0 rgba(38, 50, 56, 30%)
+		//background-color: rgba($dark, 85%)
+		background-color: darken($dark, 10% )
+		color: lighten($accent, 45%)
+
+@include media-breakpoint-down(xxl)
+	.tags_cloud
+		margin-left: 60px
+		margin-right: 60px
+@include media-breakpoint-down(xl)
+	.tags_cloud
+		margin-left: 30px
+		margin-right: 30px
+
+@include media-breakpoint-down(md)
+	.tags_cloud
+		margin-left: 20px
+		margin-right: 20px
+
+@include media-breakpoint-down(sm)
+	.tags_cloud
+		margin-left: 0
+		margin-right: 0
