@@ -110,6 +110,38 @@ document.addEventListener('DOMContentLoaded', () => {
 		}
 	}
 
+	// Comments - hide/show Overflow - content
+	if(document.querySelectorAll('.comment_text')){
+
+		function checkOverflow(e) {
+			if(e.scrollWidth > e.offsetWidth || e.scrollHeight > e.offsetHeight){
+				let overflowItem = e.querySelector('.overflow_wrap');
+				overflowItem.style.display = 'flex';
+				e.querySelector('.btn_show').addEventListener('click', function(event) {
+					event.preventDefault();
+					e.style.maxHeight = '100%';
+					overflowItem.style.display = 'none';
+				});
+			}
+		}
+		document.querySelectorAll('.comment_text').forEach(item => checkOverflow(item));
+	}
+
+	// Comments Like / Dislike
+	if(document.querySelectorAll('.btn_like_link')) {
+		document.querySelectorAll('.btn_like_link').forEach(function (elem) {
+			elem.addEventListener('click', function (event) {
+
+				event.preventDefault();
+				let commentId = elem.dataset.commit_id;
+				let type = elem.dataset.type;
+
+				console.log(commentId+' - '+type);
+
+
+			});
+		});
+	}
 
 
 	/*--same-hight-bloks-main-page--*/
