@@ -18,6 +18,9 @@
 	width: 50px
 	opacity: .5
 	margin-right: 20px
+	svg.coment_user
+		width: 50px
+		height: 50px
 
 	//fill: $accentDark
 
@@ -75,8 +78,11 @@
 	color: $time
 	text-decoration: none
 	margin-right: 1rem
+	cursor: pointer
+	transition: color .2s ease-out 0s
 	&:hover
 		text-decoration: underline
+		color: $link
 .comment_btn_wrap
 	display: flex
 	align-items: center
@@ -84,7 +90,16 @@
 .btn_like_block
 	display: flex
 	align-items: center
+.btn_like_block.like
+	.like_count,
+	.btn_like_link
+		color: $green
 
+
+.btn_like_block.dislike
+	.like_count,
+	.btn_dislike_link
+		color: #E1464D
 
 .btn_dislike_link,
 .btn_like_link
@@ -140,3 +155,81 @@
 	color: #fff
 	padding: 3px 15px 5px
 	float: right
+	transition: background-color .2s ease-out 0s, border-color .2s ease-out
+	&:hover,
+	&:focus
+		background-color: darken($dark, 5%)
+		border-color: darken($dark, 5%)
+
+@include media-breakpoint-down(xxl)
+	.comments_block
+		margin-left: 0
+		margin-right: 0
+
+@include media-breakpoint-down(xl)
+	.comments_block
+		padding-left: 4rem
+		padding-right: 4rem
+
+@include media-breakpoint-down(md)
+	.comments_block
+		padding-left: 3rem
+		padding-right: 3rem
+	.comment_img
+		width: 40px
+		svg.coment_user
+			width: 40px
+			height: 40px
+	.gap_1
+		width: 50px
+	.gap_2
+		width: 100px
+	.commen_info
+		flex-wrap: wrap
+		//justify-content: space-between
+	.comment_time
+		width: 67%
+		margin: 0
+	.comment_answer
+		width: 33%
+		margin: 0
+		text-align: right
+	.comment_btn_wrap
+		width: 100%
+		display: flex
+		justify-content: center
+		margin-top: 1rem
+		margin-bottom: 1.5rem
+
+
+@include media-breakpoint-down(sm)
+	.comments_block
+		padding-left: 2rem
+		padding-right: 2rem
+	.comment_img
+		width: 30px
+		margin-right: 15px
+		svg.coment_user
+			width: 30px
+			height: 30px
+	.gap_1
+		width: 40px
+	.gap_2
+		width: 80px
+
+@media only screen and (max-width : 480px)
+	.comment_time
+		width: 100%
+		margin-bottom: 1rem
+	.comment_answer
+		width: 100%
+		margin-bottom: 1rem
+		text-align: right
+	.gap_1
+		width: 30px
+	.gap_2
+		width: 60px
+
+@media only screen and (max-width : 400px)
+	.comment_img
+		display: none

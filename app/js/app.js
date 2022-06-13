@@ -144,6 +144,54 @@ document.addEventListener('DOMContentLoaded', () => {
 	}
 
 
+	if(document.querySelectorAll('.comment_answer')){
+		document.querySelectorAll('.comment_answer').forEach(function (item) {
+			item.addEventListener('click', function(event) {
+				//event.preventDefault();
+
+				const comment = document.getElementById('comment');
+				const form = document.getElementById('commentForm');
+				const link = event.target;
+
+				if(event.target.dataset.id) {
+					document.getElementById('parentId').value = event.target.dataset.id;
+				}
+				const name = link.parentElement.parentElement.querySelector('.comment_user').innerText + ',  ';
+				comment.textContent = name;
+
+				function setCaretPosition(ctrl, pos) {
+					// Modern browsers
+					if (ctrl.setSelectionRange) {
+						ctrl.focus();
+						ctrl.setSelectionRange(pos, pos);
+					// IE8 and below
+					} else if (ctrl.createTextRange) {
+						var range = ctrl.createTextRange();
+						range.collapse(true);
+						range.moveEnd('character', pos);
+						range.moveStart('character', pos);
+						range.select();
+					}
+				}
+
+			setCaretPosition(comment, name.length);
+			window.setTimeout( ()=>{ form.scrollIntoView({behavior: "smooth"}) }, 50 );
+
+
+			})
+
+		});
+
+
+	}
+
+
+
+
+
+
+
+
 	/*--same-hight-bloks-main-page--*/
 	/*
 	if(document.querySelector('.main_item_body'))	{
