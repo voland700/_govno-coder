@@ -19,6 +19,13 @@
 	padding-left: 10px
 	overflow: hidden
 
+.form_input.is-invalid
+	border-color: rgb(220 38 38)
+	transition: background-color .2s ease-out 0s
+	&:focus
+		border-color: #adb5bd
+
+
 .form_check
 	margin-right: .25rem
 	&:checked
@@ -62,6 +69,22 @@
 	&:focus,
 	&:hover
 		text-decoration: underline
+
+.form_error_block
+	color: rgb(220 38 38)
+	font-family: Arial, Helvetica, sans-serif
+.form_error_title
+	font-size: 1rem
+	font-weight: 600
+	margin-bottom: .75rem
+.form_error_list
+	list-style-type: disc
+	list-style-position: inside
+	font-size: .95rem
+	line-height: 1.2
+	padding-left: 1rem
+	li
+		margin-bottom: .5rem
 
 
 @media only screen and (max-width : 480px)
