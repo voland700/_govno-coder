@@ -137,7 +137,7 @@
 
 
 .comment_form
-	padding: 1rem 0
+	padding: 1rem 0 0 0
 
 .comment_form_fild
 	display: block
@@ -154,12 +154,30 @@
 	background-color: $dark
 	color: #fff
 	padding: 3px 15px 5px
+	margin-top: 1.5rem
 	float: right
 	transition: background-color .2s ease-out 0s, border-color .2s ease-out
 	&:hover,
 	&:focus
 		background-color: darken($dark, 5%)
 		border-color: darken($dark, 5%)
+.comment_valid
+	font-size: 1rem
+	font-style: italic
+	color: #dc3545
+	padding-top: .25rem
+	margin-bottom: .75rem
+
+.comment_auth_btn
+	display: inline-block
+	margin-right: 1rem
+	color: $link
+	text-decoration: none
+	transition: color .2s ease-out 0s, text-decoration .2s ease-out 0s
+	&:hover,
+	&:focus
+		text-decoration: underline
+		color: darken($link, 5%)
 
 @include media-breakpoint-down(xxl)
 	.comments_block
@@ -200,6 +218,8 @@
 		justify-content: center
 		margin-top: 1rem
 		margin-bottom: 1.5rem
+	.comment_valid
+		line-height: 1.35
 
 
 @include media-breakpoint-down(sm)

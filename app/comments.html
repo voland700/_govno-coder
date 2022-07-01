@@ -427,11 +427,13 @@
 						<input type="hidden" name="post_id" value="7">
 						<input type="hidden" id="parentId" name="paren_id" value="0">
 						<textarea name="comment" id="comment" class="comment_form_fild" cols="30" rows="10"></textarea>
-						<!-- <input type="submit" class="comment_btnbtn" value="Отправить"> -->
+						<!--<input type="submit" class="comment_btn" value="Отправить">-->
 					</form>
-					<span class="comment_valid" id="commentValid"></span>
-					<span class="comment_auth_btn">Регистрация</span>
-					<span class="comment_auth_btn">Войти</span>
+
+					<div class="comment_valid" id="commentValid"></div>
+					<a  href="#" class="comment_auth_btn" id="registerBtn">Регистрация</a>
+					<a href="#" class="comment_auth_btn"  id="loginBtn">Войти</a>
+
 				</div>
 
 
@@ -442,6 +444,39 @@
 
 
 		</section>
+
+
+
+
+
+<script>
+
+	if(document.getElementById('commentValid')){
+		const comment = document.getElementById('comment');
+		const commentValid = document.getElementById('commentValid');
+
+		document.getElementById('loginBtn').addEventListener('click', function (event) {
+			event.preventDefault();
+			//getLogIn();
+			alert('loginBtn')
+		});
+		document.getElementById('registerBtn').addEventListener('click', function (event) {
+			event.preventDefault();
+			//getRegister();
+				alert('registerBtn')
+		});
+		comment.addEventListener('input', function () {
+			commentValid.innerText = 'Sorry… Оставлять комментарии могут только зарегистрированные пользователи';
+		}, false);
+	}
+
+
+
+
+
+
+
+</script>
 
 
 
