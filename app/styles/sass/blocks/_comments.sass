@@ -90,14 +90,15 @@
 .btn_like_block
 	display: flex
 	align-items: center
-.btn_like_block.like
-	.like_count,
+
+
+.like
+	.like_count-like,
 	.btn_like_link
 		color: $green
 
-
-.btn_like_block.dislike
-	.like_count,
+.dislike
+	.like_count-dislike,
 	.btn_dislike_link
 		color: #E1464D
 
@@ -115,7 +116,8 @@
 .btn_like_link
 	font-size: 1.1rem
 
-.like_count
+.like_count-like,
+.like_count-dislike
 	display: inline-block
 	width: auto
 	height: 20px

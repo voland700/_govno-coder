@@ -128,8 +128,8 @@ document.addEventListener('DOMContentLoaded', () => {
 	}
 
 	// Comments Like / Dislike
-	if(document.querySelectorAll('.btn_like_link')) {
-		document.querySelectorAll('.btn_like_link').forEach(function (elem) {
+	if(document.querySelectorAll('.available')) {
+		document.querySelectorAll('.available').forEach(function (elem) {
 			elem.addEventListener('click', function (event) {
 
 				event.preventDefault();
